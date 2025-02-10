@@ -1,0 +1,32 @@
+
+
+<section class="cars" id="cars">
+    <div class="container">
+      <h2>
+        Выберите автомобиль
+      </h2>
+
+      <div class="cars-content" id="cars-content">
+        <aside class="cars-filter">
+          <ul>
+            <li class="active">Все марки</li>
+            <li>Lamborghini</li>
+            <li>Ferrari</li>
+            <li>Porsche</li>
+            <li>BMW</li>
+            <li>Mercedes</li>
+            <li>Chevrolet</li>
+            <li>Audi </li>
+            <li>Ford </li>
+          </ul>
+        </aside>
+        <div class="cars-items">
+            @for(car of selectedCars; track car.title; ){
+                <app-car-item [car]="car"></app-car-item>
+            }
+           
+        </div>
+      </div>
+
+    </div>
+  </section>
