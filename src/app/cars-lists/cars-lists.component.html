@@ -9,19 +9,14 @@
       <div class="cars-content" id="cars-content">
         <aside class="cars-filter">
           <ul>
-            <li class="active">Все марки</li>
-            <li>Lamborghini</li>
-            <li>Ferrari</li>
-            <li>Porsche</li>
-            <li>BMW</li>
-            <li>Mercedes</li>
-            <li>Chevrolet</li>
-            <li>Audi </li>
-            <li>Ford </li>
+            @for(item of carsFilter; track item.name;) {
+                <li (click)="selectFilterItem(item.name)" [class.active]="item.active">{{item.name}}</li>
+            }
+         
           </ul>
         </aside>
         <div class="cars-items">
-            @for(car of selectedCars; track car.title; ){
+            @for(car of carsItems; track car.title){
                 <app-car-item [car]="car"></app-car-item>
             }
            

@@ -9,7 +9,7 @@ import { CarItemComponent } from './car-item/car-item.component';
 })
 export class CarsListsComponent {
 
-   carsItems:object[]=[
+   carsItems=[
     {
       "image": "https://testologia.ru/cars-images/1.png",
       "title": "BMW M4 Competition",
@@ -79,22 +79,22 @@ export class CarsListsComponent {
     
     },
     {
-      active:true,
+      active:false,
       name:'Ferrari'
     
     },
     {
-      active:true,
+      active:false,
       name:'Porsche'
     
     },
     {
-      active:true,
+      active:false,
       name:'BMW '
     
     },
     {
-      active:true,
+      active:false,
       name:'Mercedes'
     
     }
@@ -103,6 +103,10 @@ export class CarsListsComponent {
 
   ngOnInit(){
     this.selectedCars = this.carsItems
+  }
+
+  selectFilterItem(name:string){
+    
   }
 
 
