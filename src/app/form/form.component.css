@@ -1,0 +1,56 @@
+
+
+.order{
+    padding-block: 159px 130px ;
+  }
+  .order .container{
+    position: relative;
+  
+  }
+  .order img{
+    position: absolute;
+    top: -25px;
+    left: -530px;
+  }
+  
+  .order form{
+    margin-left: 714px;
+    max-width: 486px;
+   }
+  
+  .order h3{
+    font-weight: normal;
+    font-size: 65px;
+    line-height: 100%;
+    margin-bottom: 40px;
+  
+  }
+  
+  .order p {
+    font-size: 24px;
+    line-height: 120%;
+    color: #d4d4d4;
+    margin-bottom: 60px;
+    max-width: 90%;
+  }
+  
+  .order-form{
+    width: 344px;
+    /* display: flex;
+    flex-direction: column; */
+  }
+  .order-form input{
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 24px 20px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+  }
+  .order-form .btn{
+    width: 100%;
+  }

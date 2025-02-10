@@ -1,0 +1,48 @@
+.cars{
+    background-color: #000000;
+    padding: 130px 0;
+  }
+  .cars h2{
+    font-size: 65px;
+    font-weight: normal;
+  
+  }
+  
+  .cars-content{
+    display: flex;
+    padding-top: 60px;
+  }
+  .cars-filter{
+    margin-right: 77px;
+    align-content: stretch;
+   
+  }
+  
+  .cars-filter ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    list-style: none;
+    position: sticky;
+    top: 40px;
+  }
+  
+  
+  .cars-filter ul li {
+    padding: 16px 20px;
+    box-sizing: border-box;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    width: 127px;
+    cursor: pointer;
+  }
+  .cars-filter ul li.active,.cars-filter ul li:hover{
+    color:#F8FF23;
+    border-color:#F8FF23
+  }
+  
+  .cars-items{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }

@@ -1,1 +1,61 @@
 /* Add application styles & imports to this file! */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    background-color: #212121;
+    font-family: 'Helvetica', sans-serif;
+    letter-spacing: -1px;
+    color: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+    position: relative;
+  }
+  main{
+    /* overflow: hidden; */
+    position: relative;
+  }
+  .container{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .btn{
+    text-align: center;
+    background-color: #f8ff23;
+    color: #000000;
+    text-decoration: none;
+    padding: 20px 35px;
+    max-width: 344px;
+    font-size: 24px;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: 0;
+    display: block;
+    border: none;
+    transition: all .5s;
+  }
+  .btn:hover,.btn.white-btn:hover{
+    outline: 1px solid #f8ff23 ;
+    background-color: transparent;
+    color: #f8ff23;
+  }
+  .btn.white-btn{
+    background-color: #FFFFFF;
+  }
+  
+  .black-block{
+    position: absolute;
+    width: 477px;
+    height: 910px;
+    background-color: #000000;
+    top: 0;
+    z-index: -2;
+    right: calc(50% - 780px);
+  }

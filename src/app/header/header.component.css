@@ -1,0 +1,45 @@
+.header{
+    padding-block: 46px;
+  }
+  
+  .header .container{
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img{
+    max-width: 129px;
+    vertical-align: bottom;
+  }
+  
+  .menu{
+    margin-inline: 177px auto;
+  }
+  
+  .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 65px;
+  }
+  .menu ul a {
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color .3s;
+  }
+  
+  .menu ul a:hover{
+    color: #f8ff23;
+  }
+  
+  .phone{
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: normal;
+  }

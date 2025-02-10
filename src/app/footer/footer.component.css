@@ -1,0 +1,18 @@
+.footer{
+    padding: 47px 0;
+    border-top: 1px solid #5F5F5F;
+  }
+  
+  .footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .rights{
+    font-size: 14px;
+    line-height: 90%;
+    letter-spacing: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
