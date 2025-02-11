@@ -6,18 +6,18 @@
         Выберите автомобиль
       </h2>
 
-      <div class="cars-content" id="cars-content">
+      <div class="cars-content" id="cars-content" #carsContent>
         <aside class="cars-filter">
           <ul>
             @for(item of carsFilter; track item.name;) {
-                <li (click)="selectFilterItem(item.name)" [class.active]="item.active">{{item.name}}</li>
+                <li (click)="selectFilterItem(item.name,carsContent)" [class.active]="item.active">{{item.name}}</li>
             }
          
           </ul>
         </aside>
         <div class="cars-items">
-            @for(car of carsItems; track car.title){
-                <app-car-item [car]="car"></app-car-item>
+            @for(car of selectedCars; track car.title){
+                <app-car-item [car]="car" (carTitle)="setTitletoForm($event)" ></app-car-item>
             }
            
         </div>

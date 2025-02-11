@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-car-item',
@@ -9,4 +9,11 @@ import { Component, Input, Output } from '@angular/core';
 export class CarItemComponent {
 
   @Input() car!:{title:string,image:string,text:string,prices:number[]};
+
+  @Output() carTitle:EventEmitter<string>= new EventEmitter();
+
+
+  addToForm(title:string){
+      this.carTitle.emit(title)
+  }
 }

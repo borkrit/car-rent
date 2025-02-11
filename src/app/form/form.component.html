@@ -1,20 +1,21 @@
 <section class="order">
-    <div class="container">
-        <img src="assets/images/order-car.png" alt="order-car">
+  <div class="container">
+    <img src="assets/images/order-car.png" alt="order-car">
 
-          <form id="order">
-            <h3>Забронируйте автомобиль</h3>
-            <p>
-              Заполните контактные данные, и мы перезвоним вам для обсуждения деталей и подтверждения бронирования
-            </p>
+    <form id="order" [formGroup]="orderForm">
+      <h3>Забронируйте автомобиль</h3>
+      <p>
+        Заполните контактные данные, и мы перезвоним вам для обсуждения деталей и подтверждения бронирования
+      </p>
 
-            <div class="order-form">
-              <input type="text" id="auto" name="auto" placeholder="Автомобиль">
-              <input type="text" id="name" name="name" placeholder="Ваше имя">
-              <input type="tel" id="phone" name="phone" placeholder="Ваш телефон">
+      <div class="order-form">
+        <input type="text" id="auto" [class.error]="validationForm('car')" name="car" [value]="titleCar" formControlName="car"  readonly placeholder="Автомобиль">
+        <input type="text" id="name" [class.error]="validationForm('name')" name="name" formControlName="name" required placeholder="Ваше имя">
+        <input type="tel" id="phone" [class.error]="validationForm('phone')" name="phone" formControlName="phone" minlength="10" required
+          placeholder="Ваш телефон">
 
-              <button type="submit" class="btn"> Забронировать</button>
-            </div>
-          </form>
-    </div>
-  </section>
+        <button type="submit"  class="btn" (click)="sendOrder()"> Забронировать</button>
+      </div>
+    </form>
+  </div>
+</section>

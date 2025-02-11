@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { HeaderComponent } from './app/header/header.component';
 import { FooterComponent } from './app/footer/footer.component';
@@ -13,8 +13,8 @@ import { FormComponent } from './app/form/form.component';
    <app-header></app-header>
    <main>
     <app-hero></app-hero>
-    <app-cars-lists></app-cars-lists>
-    <app-form></app-form>
+    <app-cars-lists (selectedCartTitle)="changeCarTitle($event)" ></app-cars-lists>
+    <app-form [titleCar]="titleCar"></app-form>
    </main>
    <app-footer></app-footer>
   
@@ -22,6 +22,15 @@ import { FormComponent } from './app/form/form.component';
 })
 export class App {
   name = 'Angular';
+  titleCar =''
+
+  changeCarTitle(carTitle:string){
+    this.titleCar = carTitle
+
+  }
+
+
+
 }
 
 bootstrapApplication(App);

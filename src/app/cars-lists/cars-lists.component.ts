@@ -1,5 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CarItemComponent } from './car-item/car-item.component';
+
+interface Car{
+  image:string;
+  title:string;
+  text:string;
+  prices: number[]
+}
+
+
 
 @Component({
   selector: 'app-cars-lists',
@@ -9,7 +18,7 @@ import { CarItemComponent } from './car-item/car-item.component';
 })
 export class CarsListsComponent {
 
-   carsItems=[
+   carsItems:Car[]=[
     {
       "image": "https://testologia.ru/cars-images/1.png",
       "title": "BMW M4 Competition",
@@ -66,7 +75,7 @@ export class CarsListsComponent {
     }
   ]
 
-  selectedCars:object[] = []
+  selectedCars:Car[]  = [];
   carsFilter=[
     {
       active:true,
@@ -101,12 +110,30 @@ export class CarsListsComponent {
 
   ]
 
+  @Output() selectedCartTitle =  new EventEmitter()
+
   ngOnInit(){
     this.selectedCars = this.carsItems
   }
 
-  selectFilterItem(name:string){
-    
+  selectFilterItem(name:string,carsContent:HTMLElement){
+      
+      this.carsFilter.map(item=>{
+        item.active = item.name == name ? true : false;
+      })
+
+
+      this.selectedCars = name.toLocaleLowerCase() === 'все марки' ? this.carsItems : this.carsItems.filter((car) => {
+          return car.title.toLocaleLowerCase().includes(name.toLocaleLowerCase())
+    });
+
+    carsContent.scrollIntoView({behavior:'instant'})
+      
+
+  }
+
+  setTitletoForm(e: string){
+    this.selectedCartTitle.emit(e)
   }
 
 

@@ -41,10 +41,15 @@
     border: none;
     transition: all .5s;
   }
-  .btn:hover,.btn.white-btn:hover{
+  .btn:hover:not(:disabled),.btn.white-btn:hover{
     outline: 1px solid #f8ff23 ;
     background-color: transparent;
     color: #f8ff23;
+  }
+  .btn:disabled{
+    background-color:#524c4c;
+    cursor: not-allowed;
+
   }
   .btn.white-btn{
     background-color: #FFFFFF;

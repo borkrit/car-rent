@@ -51,6 +51,13 @@
     font-size: 16px;
     outline: none;
   }
+  .order-form input:read-only{
+    cursor: not-allowed;
+    
+  }
+  .order-form input.error{
+    border-color: red;
+  }
   .order-form .btn{
     width: 100%;
   }
