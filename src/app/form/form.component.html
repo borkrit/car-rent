@@ -1,6 +1,6 @@
 <section class="order">
   <div class="container">
-    <img src="assets/images/order-car.png" alt="order-car">
+    <img src="public/images/order-car.png" alt="order-car">
 
     <form id="order" [formGroup]="orderForm">
       <h3>Забронируйте автомобиль</h3>
@@ -14,7 +14,7 @@
         <input type="tel" id="phone" [class.error]="validationForm('phone')" name="phone" formControlName="phone" minlength="10" required
           placeholder="Ваш телефон">
 
-        <button type="submit"  class="btn" (click)="sendOrder()"> Забронировать</button>
+        <button type="submit" [disabled]="!orderForm.valid" class="btn" (click)="sendOrder()"> Забронировать</button>
       </div>
     </form>
   </div>

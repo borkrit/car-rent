@@ -5,6 +5,7 @@ import { FooterComponent } from './app/footer/footer.component';
 import { HeroComponent } from './app/hero/hero.component';
 import { CarsListsComponent } from './app/cars-lists/cars-lists.component';
 import { FormComponent } from './app/form/form.component';
+import {provideHttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -33,4 +34,4 @@ export class App {
 
 }
 
-bootstrapApplication(App);
+bootstrapApplication(App,{providers:[provideHttpClient()]});
