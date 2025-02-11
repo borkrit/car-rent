@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import {Component, inject, Input, SimpleChanges} from '@angular/core';
 import { ReactiveFormsModule,FormControl, FormGroup, Validators } from '@angular/forms';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-form',
@@ -9,6 +10,8 @@ import { ReactiveFormsModule,FormControl, FormGroup, Validators } from '@angular
 })
 export class FormComponent {
 
+  http=inject(HttpClient)
+
   @Input() titleCar:string ='' 
 
   orderForm = new FormGroup({
@@ -17,6 +20,11 @@ export class FormComponent {
     phone: new FormControl('')
   })
 
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['titleCar'] && !changes['titleCar'].firstChange){
+      this.orderForm.patchValue({ car: this.titleCar });
+    }
+  }
 
   validationForm(fieldName:string){
     const control = this.orderForm.get(fieldName)
@@ -25,11 +33,21 @@ export class FormComponent {
   }
 
   sendOrder(){
-    this.orderForm.get('car')?.setValue(this.titleCar)
+
     
     if(this.orderForm.valid){
-      alert('Confirm order')
-      this.orderForm.reset();
+
+      this.http.post('https://testologia.ru/cars-order', this.orderForm.value).subscribe({
+        next: (res:any)=> {
+          alert(res.message)
+          this.orderForm.reset();
+
+        },
+        error: (err)=> {
+          console.log(err.error)
+        }
+      })
+
     }
   }
 
