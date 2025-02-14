@@ -1,0 +1,33 @@
+.main-content{
+  padding-block: 100px 175px;
+
+}
+.main-content .container{
+  position: relative;
+}
+
+.main-info{
+  max-width: 765px;
+}
+.main-info h1{
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 100%;
+  margin-bottom: 40px;
+}
+.main-info p{
+  font-size: 24px;
+  line-height: 120%;
+  color: #d4d4d4;
+  max-width: 435px;
+  margin-bottom: 60px;
+}
+
+.main-image{
+  position: absolute;
+  top: 78px;
+  right: -576px;
+  z-index: -1;
+
+
+}
