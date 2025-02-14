@@ -64,3 +64,7 @@
     z-index: -2;
     right: calc(50% - 780px);
   }
+.logo img{
+    max-width: 129px;
+    vertical-align: bottom;
+  }
